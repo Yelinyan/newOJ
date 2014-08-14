@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Open.ooj - (oﾟωﾟo) -</title>
+
+  <link rel="stylesheet" href="{{ static_url("css/bootstrap.min.css") }}">
+  <link rel="stylesheet" href="{{ static_url("css/mystyle.css") }}">
+
+  <style>
+  body {
+  background: white url("{{ static_url("images/background.jpg") }}") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*
+ * BOOTSTRAP BUTTON INFO RESET
+ *
+ */
+.btn-info {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #28ade8;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #ffffff;
+  background-color: #28ade8;
+  border-color: #269abc;
+}
+
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  background-image: none;
+}
+
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #28ade8;
+  border-color: #46b8da;
+}
+
+/*
+ * My Style
+ *
+ */
+.logo {
+  margin: 40px 0 40px 0;
+}
+.logo h1 {
+  display: inline;
+  position: relative;
+  top: 8px;
+  margin-left: 10px;
+}
+
+.container {
+  max-width: 420px;
+}
+
+
+.login {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  -moz-box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+  border-radius: 0.4em;
+  /* bootstrap resets */
+  /* decorative span falls 1px from the bottom of the input */
+  /* removes top border on the inputs */
+  /* .login nested styles */
+}
+.login h1, .login h2, .login h3, .login p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.login .glyphicon {
+  color: #fff;
+}
+.login .input-group span {
+  background-color: #bdc3c7;
+}
+.login .input-group input {
+  background-color: #f2f2f2;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-weight: 500;
+}
+.login .input-group-addon {
+  top: 0px;
+}
+.login .form-control {
+  border: 0px solid #cccccc;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0px 0px transparent;
+  box-shadow: inset 0 0px 0px transparent;
+}
+.login h2 {
+  font-size: 1.8em;
+  font-weight: 400;
+  line-height: 50%;
+  margin-bottom: 20px;
+}
+.login h2, .login button {
+  text-transform: uppercase;
+}
+.login p {
+  font-weight: 200;
+  margin-top: 20px;
+}
+.login p a {
+  font-weight: 400;
+  color: #28ade8;
+  text-decoration: none;
+}
+.login small {
+  margin: 10px 0 10px 0;
+}
+.login small a {
+  color: #bdc3c7;
+  text-decoration: none;
+}
+.login button {
+  width: 100%;
+  font-weight: 500;
+}
+  </style>
+
+  <script>
+    window.open    = function(){};
+    window.print   = function(){};
+    // Support hover state for mobile.
+    if (false) {
+      window.ontouchstart = function(){};
+    }
+
+    function __linkClick(e) {
+      parent.window.postMessage(this.href, '*');
+    };
+
+    function __bindToLinks() {
+      var __links = document.querySelectorAll('a');
+      for (var i = 0, l = __links.length; i < l; i++) {
+        if ( __links[i].getAttribute('data-t') == '_blank' ) {
+          __links[i].addEventListener('click', __linkClick, false);
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <section class="container">
+
+<article class="logo text-center">
+<figure>
+  <h1></h1>
+</figure>
+</article>
+
+<section class='login text-center'>
+<h2>SIGNUP</h2>
+<div class="alert alert-{{state}}">{{describe}}</div>
+<form method="post" action="/dealup">
+<div class="input-group">
+  <span class="input-group-addon glyphicon glyphicon-user"></span>
+  <input type="text" class="form-control" required="" placeholder="User Name" name="username">
+</div>
+<br>
+<div class="input-group">
+  <span class="input-group-addon glyphicon glyphicon-lock"></span>
+  <input type="password" class="form-control" required="" placeholder="Password" name="password">
+</div>
+</br>
+<div class="input-group">
+  <span class="input-group-addon glyphicon glyphicon-repeat"></span>
+  <input type="password" class="form-control" required="" placeholder="Confirm Password" name="cpassword">
+</div>
+</br>
+<div class="input-group">
+  <span class="input-group-addon glyphicon glyphicon-heart"></span>
+  <input type="text" class="form-control" required="" placeholder="Nick Name" name="nickname">
+</div>
+</br>
+<button class="btn btn-info" type="submit">Submit</button>
+</form>
+
+
+</section><!--  END LOGIN SESSION -->
+
+</section><!--  END CONTAINER -->
+
+  <script>
+
+</script>
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage('resize', "*");
+    }
+    __bindToLinks();
+  </script>
+  <script src="{{ static_url("js/jquery.min.js") }}"></script>
+
+
+
+</body>
+
+</html>

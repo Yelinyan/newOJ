@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if state==1 %}
+<div type="hidden" class="alert alert-danger">username is invalid or password is wrong.</div>
+{% end %}
+<br><br>
+   <div id="wrap">
+
+               <div class="container-fluid">
+                <div class="row-fluid">
+<div class="col-md-2"> </div>
+<div class="col-md-7">
+                        <div id="side">
+                                        <div class="panel panel-default">
+                                        <div class="panel-heading">Create contest</div>
+                                        <div class="panel-body">
+      <form class="navbar-form navbar-left"  method="post" action="/create">
+    <input type="text" class="form-control" placeholder="Name" name="Name">
+        <input type="text" class="form-control" placeholder="XXXX-XX-XX  XX:XX:XX" name="Starttime">
+     <input type="text" class="form-control" placeholder="XXXX XXXX ... XXXX" name="Problems">
+  
+  <button type="submit" class="btn btn-default">Create</button>
+</form>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+<div class="col-md-1"> </div></div></div></div>
+<br>
+{% end %}

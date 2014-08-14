@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if state==1 %}
+<div type="hidden" class="alert alert-danger">username is invalid or password is wrong.</div>
+{% end %}
+<br><br>
+   <div id="wrap">
+               <div class="container-fluid">
+                <div class="row-fluid">
+                                    <div class="col-md-1">
+</div>
+                    <div class="col-md-7">
+                        <div id="main">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        Problems
+                                    </h3>
+                                </div>
+                                <div class="list-group">
+                                    {% for x in range(len(problemnames)) %}
+                                    <a href="/problem?id={{problemnames[x]["problemid"]}}&contest={{name}}" style="position: relative;" class="list-group-item">
+                                        <div class="pull-right">
+                                        </div>
+                                        <div style="margin-top: 2px; margin-right: 16px;" class="h2 pull-left">
+                                        <font color="{% if problemnames[x]["problemid"] in solved %}green{% end %}">
+                                            {{ 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[x] }} </font>
+                                        </div>
+                                        <h4 class="list-group-item-heading">
+                                            {{ problemnames[x]["title"] }}
+                                        </h4>
+                                    </a>
+                                    {% end %}
+                                </div>
+                            </div>
+                            <div class="panel panel-default panel-clarifications">
+                                <div class="panel-heading">
+                                    <div class="pull-right small">
+                                    </div>
+                                    <h3 class="panel-title">
+                                        Have fun.
+                                    </h3>
+                                </div>
+                                <div class="list-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="side">
+                            <div class="panel panel-default panel-contest-timer">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        Time remaining
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="text-center">
+                                        <div class="h2">
+                                      <div class="count">
+                                                <span></span>:<span></span>:<span></span>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer small">
+                                    fvck it happyly.
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        Resources
+                                    </h3>
+                                </div>
+                                <div class="list-group">
+                                    <a href="#" 
+                                    class="list-group-item">
+                                        About us &nbsp;(&nbsp;hadn't open&nbsp;)
+                                        
+                                    </a>
+                                    <a href="/board?name={{name}}" class="list-group-item">
+                                        Board
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% end %}
+{% block script %}
+<script type="text/javascript">
+$(function(){
+    var tYear = "";     
+    var tMonth = "";    
+    var tDate = "";     
+    var iRemain = "";   
+    var sDate = "";     
+    var sHour = "";     
+    var sMin = "";      
+    var sSec = "";      
+
+    function setDig(num,n){
+        var str = ""+num;
+        while(str.length<n){
+            str="0"+str
+        }
+        return str;
+    }
+    
+    
+    function getdate(){
+        
+        var oStartDate = new Date();
+        var oEndDate = new Date();
+                
+        oEndDate.setFullYear(parseInt({{timestruct.tm_year}}));
+        oEndDate.setMonth(parseInt({{timestruct.tm_mon}})-1);
+        oEndDate.setDate(parseInt({{timestruct.tm_mday}}));
+        oEndDate.setHours({{timestruct.tm_hour+4}});
+        oEndDate.setMinutes({{timestruct.tm_min}});
+        oEndDate.setSeconds(0);
+        
+        iRemain = (oEndDate.getTime() - oStartDate.getTime())/1000;
+        
+      //  sDate = setDig(parseInt(iRemain/(60*60*24)),3);
+      //  iRemain %= 60*60*24;
+        
+        sHour = setDig(parseInt(iRemain/(60*60)),2)
+        
+        iRemain %= 60*60;
+        
+        sMin = setDig(parseInt(iRemain/60),2)
+        
+        iRemain%=60;
+        
+        sSec = setDig(iRemain,2);
+        
+    }
+    
+    function updateShow(){
+        $(".showdate span").text(tYear+"-"+tMonth+"-"+tDate);
+        $(".count span").each(function(index, element) {
+            if(index==0){
+                $(this).text(sHour);
+            }else if(index == 1){
+                $(this).text(sMin);
+            }else if(index == 2){
+                $(this).text(sSec);
+            }
+        });
+    }
+    
+    function autoTime(){
+        getdate();
+        if(iRemain<0){
+            clearTimeout(setT);
+            return;
+        }
+        updateShow();
+        var setT = setTimeout(autoTime,1000);
+        
+    }
+    
+            autoTime();
+    })
+</script>
+{% end %}

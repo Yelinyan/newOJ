@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if state==1 %}
+<div type="hidden" class="alert alert-danger">username is invalid or password is wrong.</div>
+{% end %}
+<br><br>
+   <div id="wrap">
+
+              <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="col-md-9">
+                        <div id="main">
+                            <div class="panel panel-default">
+                                <div style="position: relative;" class="panel-body">
+                                    <div class="h1">
+                                        {{ title }}
+                                    </div>
+                                    <br>
+                                    <p class="small">
+                                        {{ timeinfo }}
+                                        <br>
+                                        {{ meminfo }}
+                                    </p>
+                                    <br>
+                                    {% raw dcrp %}
+                                        <br>
+                                            <h2>
+                                                Input
+                                            </h2>
+                                           {% raw inputdcrp %}
+                                        <br>
+                                            <h2>
+                                                Output
+                                            </h2>
+                                            {% raw outputdcrp %}
+                                    <br><br>
+                                    <div>
+                                        <h2>
+                                            Sample Input
+                                        </h2>
+                                        
+                                        {% raw sampleinput %}
+                                        
+                                    </div>
+                                    <br>
+                                     <div>
+                                        <h2>
+                                            Sample Output
+                                        </h2>
+                                        {% raw sampleoutput %}
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="side">
+                            <div class="panel panel-default panel-contest-timer">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        Submit Here.
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="text-center">
+                                          <form role="form" method="post" action="/submit?pid={{problemid}}&cname={{cname}}">
+                                          <select class="form-control" name="lang">
+                                             <option>C++</option>
+                                            <option>C</option>
+                                            <option>JAVA</option>
+                                            </select>
+                                            <br>
+                                              <textarea class="form-control" rows="5" name="code"></textarea>
+                                              <br>
+                                               <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+
+
+                                          </form>
+                                    </div>
+                                </div>
+                                <div class="panel-footer small">
+                                    fvck it pypy.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+       
+{% end %}
+

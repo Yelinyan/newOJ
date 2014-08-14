@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if state==1 %}
+<div type="hidden" class="alert alert-danger">username is invalid or password is wrong.</div>
+{% end %}
+<br><br>
+<div id="wrap">
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+            	<div class="panel-heading">
+            		<h3 class="panel-title">
+            			Submissions
+            		</h3>
+            	</div>
+            	<table class="table table-responsive table-condensed">
+            		<thead>
+            			<tr>
+            				<th>Author</th>
+            				<th>Problem</th>
+            				<th>Time</th>
+            				<th>Language</th>
+            				<th>CPU</th>
+            				<th>Memory</th>
+            				<th></th>
+            			</tr>
+            		</thead>
+            	<tbody>
+            		{% for result in results %}
+            			<tr>
+            			<td>{{result['User']}}</td>
+            			<td>{{result['Problem']}}</td>
+            			<td>{{result['Submit Time']}}</td>
+            			<td>{{result['Language']}}</td>
+            			<td>{{result['Time']}}</td>
+            			<td>{{result['Memory']}}</td>
+            			<td>
+            				{% if result['Result']=='Accepted' %}
+            				<div class="label label-success">
+            					Accepted
+            				</div>
+            				{% else %}
+            				<div class="label label-danger">
+            					{{result['Result']}}
+            				</div>
+            				{% end %}
+            			</td>
+            			</tr>
+            		{% end %}
+            		</tbody>
+                        <div class="">
+                        {% module Paginator(pagen,15,length) %}
+                        </div>
+            	</table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+{% end %}

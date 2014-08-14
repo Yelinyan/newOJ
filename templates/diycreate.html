@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if state==1 %}
+<div type="hidden" class="alert alert-danger">username is invalid or password is wrong.</div>
+{% end %}
+<br><br>
+   <div id="wrap">
+
+               <div class="container-fluid">
+                <div class="row-fluid">
+<div class="col-md-1"> </div>
+<div class="col-md-10">
+                        <div id="side">
+                                        <div class="panel panel-default">
+                                        <div class="panel-heading">Create contest</div>
+                                        <div class="panel-body">
+      <form method="post" action="/creatediy" role="form" class="form-horizontal">
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">ID</label>
+    	<div class="col-sm-3">
+     	 <input class="form-control" placeholder="1729XXXX" name="Id">
+    	</div>
+
+   	 <label class="col-sm-2 control-label">Title</label>
+    	<div class="col-sm-3">
+     	 <input class="form-control" name="Title">
+    	</div>
+  	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Time Limit</label>
+    	<div class="col-sm-3">
+     	 <input class="form-control" placeholder="XXXX MS" name="Time">
+    	</div>
+
+   	 <label class="col-sm-2 control-label">Memory Limit</label>
+    	<div class="col-sm-3">
+     	 <input class="form-control" placeholder="XXXX KB" name="Memory">
+    	</div>
+	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Problem Description</label>
+	 <div class="col-sm-8">
+	  <textarea class="form-control" name="Dcrp"></textarea>
+	</div>
+	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Input Description</label>
+	 <div class="col-sm-8">
+	  <textarea class="form-control" name="Indcrp"></textarea>
+	</div>
+	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Output Description</label>
+	 <div class="col-sm-8">
+	  <textarea class="form-control" name="Oudcrp"></textarea>
+	</div>
+	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Sample Input</label>
+	 <div class="col-sm-8">
+	  <textarea class="form-control" name="Si"></textarea>
+	</div>
+	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Sample Output</label>
+	 <div class="col-sm-8">
+	  <textarea class="form-control" name="So"></textarea>
+	</div>
+	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Standard Inputs</label>
+	 <div class="col-sm-8">
+	  <textarea class="form-control" name="Sti"></textarea>
+	</div>
+	</div>
+
+	<div class="form-group">
+   	 <label class="col-sm-2 control-label">Standard Output</label>
+	 <div class="col-sm-8">
+	  <textarea class="form-control" name="Sto"></textarea>
+	</div>
+	</div>
+	
+	<div class="form-group">
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	<button type="submit" class="btn btn-default">Submit</button>
+	</div>
+
+      </form>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+<div class="col-md-1"> </div></div></div></div>
+<br>
+{% end %}

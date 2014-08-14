@@ -1,0 +1,38 @@
+.foot-container {
+  max-width: 960px;
+  margin: 0 auto ;
+}
+
+.article-container {
+  max-width: 720px;
+  margin: 0 auto ;
+}
+
+.cd-container {
+  max-width: 720px;
+  height: 300px;
+  margin: 0 auto ;
+}
+<<<<<<< HEAD
+
+=======
+>>>>>>> f70c447cd8481b93bcb678629fb88436473e6b0c
+pre.sio {
+    font - family: Courier New,
+    Courier,
+    monospace;
+    font - size: 12pt;
+}
+
+	#biaoge{
+		margin:6px;
+		padding:2px;
+		text-align:center;
+	}
+	#biaoge table{
+		margin:0px auto;
+<<<<<<< HEAD
+	}
+=======
+	}
+>>>>>>> f70c447cd8481b93bcb678629fb88436473e6b0c

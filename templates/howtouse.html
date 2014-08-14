@@ -1,0 +1,187 @@
+<<<<<<< HEAD
+{% extends "layout.html" %}
+
+{% block body %}
+<br>
+
+	<h1 style="text-align:center;">Easy to use , enjoy it !
+	<small>Edit by 陈凯朋</small>
+	</h1>
+	<h2>1.Verdicts of the judge system</h2>
+	<table border="1" bordercolor="#1E90FF" frame="border" rules="all" align="center">
+		<tr>
+		<th width="200px" height="30px">Verdict</th>
+		<th  width="100px" height="30px">Abbreviation</th>
+		<th  width="400px" height="30px">Indiction</th>
+		</tr>
+		<tr>
+		<td text-align="center"><font face="verdana">Accepted</font></td>
+		<td align="center"><font face="verdana">AC</font></td>
+		<td><font face="verdana">The solution has produced output that the judge system or a checker program (commonly referred to as a special judge) accepts as correct.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Presentation Error</font></td><td align="center"><font face="verdana">PE</font></td><td><font face="verdana">The solution has produced output that is correct in content but incorrect in format.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Time Limit Execeeded</font></td><td align="center"><font face="verdana">TLE</font></td><td><font face="verdana">The solution has run for longer time than permitted. This means either the time spent on all test cases exceeds the overall limit or that spent on a single test case exceeds the per-case limit. Note that time limits for solutions in Java are tripled. These solutions are also allowed an extra 110 ms for each test case.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Memory Limit Execeeded</font></td><td align="center"><font face="verdana">MLE</font></td><td><font face="verdana">The solution has consumed more memory than permitted.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Wrong Answer</font></td><td align="center"><font face="verdana">WA</font></td><td><font face="verdana">The solution has not produced the desired output.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Runtime Error</font></td><td align="center"><font face="verdana">RE</font></td><td><font face="verdana">The solution has caused an unhandled exception (as defined by the runtime environment) during execution.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Output Limit Exceeded</font></td><td align="center"><font face="verdana">OLE</font></td><td><font face="verdana">The solution has produced excessive output.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Compile Error</font></td><td align="center"><font face="verdana">CE</font></td><td><font face="verdana">The solution cannot be compiled into any program runnable by the judge system.</font></td>
+		</tr>
+	</table>
+	<hr/>
+	<h2>2.Sample Solution to problem A+B</a></h2>
+	<div id="biaoge">
+	<table border="1" bordercolor="#1E90FF" frame="border" rules="all">
+	<tr>
+		<th text-align="center" height="30px" width="150px">language</th><th>Sample solution to Problem A+B</th>
+	</tr>
+	<tr>
+	<td align="center">C</td><td width="300px" style="text-align:left">&nbsp;&nbsp;#include &lt;stdio.h&gt;<br/>
+	&nbsp;&nbsp;int main(void) {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	int a, b;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	scanf("%d%d", &a, &b);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	printf("%d", a + b);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	return 0;<br/>
+	&nbsp;&nbsp;}
+</td>
+	</tr>
+	<tr>
+	<td align="center">C++</td>
+	<td style="text-align:left;">
+	&nbsp;&nbsp;#include &lt;iostream&gt;<br/>
+    
+    &nbsp;&nbsp;using namespace std;<br/>
+
+	&nbsp;&nbsp;int main(void) {<br/>
+    	&nbsp;&nbsp;&nbsp;&nbsp;int a, b;<br/>
+    	&nbsp;&nbsp;&nbsp;&nbsp;cin >> a >> b;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;cout << a + b;<br/>
+   &nbsp;&nbsp;&nbsp;&nbsp;return 0;<br/>
+&nbsp;&nbsp;}
+	</td>
+	</tr>
+	<tr>
+	<td align="center">Java</td><td style="text-align:left">
+	&nbsp;&nbsp;import java.util.Scanner;<br/>
+
+&nbsp;&nbsp;	public class Main {<br/>
+  &nbsp;&nbsp;  public static void main(String[] args) {<br/>
+  &nbsp;&nbsp;      Scanner in = new Scanner(System.in);<br/>
+  &nbsp;&nbsp;      int a = in.nextInt();<br/>
+  &nbsp;&nbsp;      int b = in.nextInt();<br/>
+   &nbsp;&nbsp;     System.out.println(a + b);<br/>
+   &nbsp;&nbsp; }<br/>
+&nbsp;&nbsp;}
+	</td>
+	</tr>
+	</table>
+	<hr/>
+	</div>
+	
+{% end %}
+=======
+{% extends "layout.html" %}
+
+{% block body %}
+<br>
+
+	<h1 style="text-align:center;">That's so easy to use our OJ,Enjoy it!</h1>
+	<h2>1.Verdicts of the judge system</h2>
+	<table border="1" bordercolor="#1E90FF" frame="border" rules="all" align="center">
+		<tr>
+		<th width="200px" height="30px">Verdict</th>
+		<th  width="100px" height="30px">Abbreviation</th>
+		<th  width="400px" height="30px">Indiction</th>
+		</tr>
+		<tr>
+		<td text-align="center"><font face="verdana">Accepted</font></td>
+		<td align="center"><font face="verdana">AC</font></td>
+		<td><font face="verdana">The solution has produced output that the judge system or a checker program (commonly referred to as a special judge) accepts as correct.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Presentation Error</font></td><td align="center"><font face="verdana">PE</font></td><td><font face="verdana">The solution has produced output that is correct in content but incorrect in format.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Time Limit Execeeded</font></td><td align="center"><font face="verdana">TLE</font></td><td><font face="verdana">The solution has run for longer time than permitted. This means either the time spent on all test cases exceeds the overall limit or that spent on a single test case exceeds the per-case limit. Note that time limits for solutions in Java are tripled. These solutions are also allowed an extra 110 ms for each test case.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Memory Limit Execeeded</font></td><td align="center"><font face="verdana">MLE</font></td><td><font face="verdana">The solution has consumed more memory than permitted.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Wrong Answer</font></td><td align="center"><font face="verdana">WA</font></td><td><font face="verdana">The solution has not produced the desired output.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Runtime Error</font></td><td align="center"><font face="verdana">RE</font></td><td><font face="verdana">The solution has caused an unhandled exception (as defined by the runtime environment) during execution.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Output Limit Exceeded</font></td><td align="center"><font face="verdana">OLE</font></td><td><font face="verdana">The solution has produced excessive output.</font></td>
+		</tr>
+		<tr>
+		<td><font face="verdana">Compile Error</font></td><td align="center"><font face="verdana">CE</font></td><td><font face="verdana">The solution cannot be compiled into any program runnable by the judge system.</font></td>
+		</tr>
+	</table>
+	<hr/>
+	<h2>2.Sample Solution to problem A+B</a></h2>
+	<div id="biaoge">
+	<table border="1" bordercolor="#1E90FF" frame="border" rules="all">
+	<tr>
+		<th text-align="center" height="30px">language</th><th>Sample solution to Problem A+B</th>
+	</tr>
+	<tr>
+	<td align="center">C</td><td width="300px" style="text-align:left">&nbsp;&nbsp;#include &lt;stdio.h&gt;<br/>
+	&nbsp;&nbsp;int main(void) {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	int a, b;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	scanf("%d%d", &a, &b);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	printf("%d", a + b);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;	return 0;<br/>
+	&nbsp;&nbsp;}
+</td>
+	</tr>
+	<tr>
+	<td align="center">C++</td>
+	<td style="text-align:left;">
+	&nbsp;&nbsp;#include &lt;iostream&gt;<br/>
+    
+    &nbsp;&nbsp;using namespace std;<br/>
+
+	&nbsp;&nbsp;int main(void) {<br/>
+    	&nbsp;&nbsp;&nbsp;&nbsp;int a, b;<br/>
+    	&nbsp;&nbsp;&nbsp;&nbsp;cin >> a >> b;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;cout << a + b;<br/>
+   &nbsp;&nbsp;&nbsp;&nbsp;return 0;<br/>
+&nbsp;&nbsp;}
+	</td>
+	</tr>
+	<tr>
+	<td align="center">Java</td><td style="text-align:left">
+	&nbsp;&nbsp;import java.util.Scanner;<br/>
+
+&nbsp;&nbsp;	public class Main {<br/>
+  &nbsp;&nbsp;  public static void main(String[] args) {<br/>
+  &nbsp;&nbsp;      Scanner in = new Scanner(System.in);<br/>
+  &nbsp;&nbsp;      int a = in.nextInt();<br/>
+  &nbsp;&nbsp;      int b = in.nextInt();<br/>
+   &nbsp;&nbsp;     System.out.println(a + b);<br/>
+   &nbsp;&nbsp; }<br/>
+&nbsp;&nbsp;}
+	</td>
+	</tr>
+	</table>
+	<hr/>
+	</div>
+	
+{% end %}
+>>>>>>> f70c447cd8481b93bcb678629fb88436473e6b0c

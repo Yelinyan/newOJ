@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block body %}
+<br><br>
+<div id="wrap">
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="panel panel-default">
+            	<div class="panel-heading">
+            		<h3 class="panel-title">
+            			Standings
+            		</h3>
+            	</div>
+            	<table class="table table-responsive">
+            		<thead>
+            			<tr>
+            				<th>#</th>
+            				<th>Name</th>
+                                    <th></th>
+                              {% for x in range(length) %}
+            				<th style="   text-align: center;   
+">{{'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[x]}}</th>
+                              {% end %}
+            			</tr>
+            		</thead>
+            	<tbody>
+            		{% for i in range(len(board)) %}
+            			<tr>
+            			<td>{{ i+1 }}</td>
+            			<td>{{board[i]['nickname']}}</td>
+            			<td>
+                                    <div class="label label-info">
+                                    {{board[i]["solved"]}}
+                                    </div>
+                                    <div class="label label-default">
+                                    {{board[i]["time"]}}
+                                    </div>               
+                              </td>
+                              {% for item in board[i]["subinfo"] %}
+            			<td style="   text-align: center; ">
+            				{% if item['haveaced']==1 and item['subtimes']!=0 %}
+            				<div class="label label-success">
+            					{{item['subtimes']}}
+            				</div>
+                                    {% end %}
+            				{% if item['haveaced']==0 and item['subtimes']!=0 %}
+            				<div class="label label-warning">
+            					{{item['subtimes']}}
+            				</div>
+            				{% end %}
+            			</td>
+                              {% end %}
+            			</tr>
+            		{% end %}
+            		</tbody>
+            	</table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<<<<<<< HEAD
+{% end %}
+=======
+{% end %}
+>>>>>>> f70c447cd8481b93bcb678629fb88436473e6b0c

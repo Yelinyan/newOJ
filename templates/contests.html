@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if state==1 %}
+<div type="hidden" class="alert alert-danger">username is invalid or password is wrong.</div>
+{% end %}
+<br><br>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Contests</h3>
+                </div>
+                <div class="list-group">
+                    {% for contest in contests %}
+                    <a href="/problems?name={{ contest["name"] }}" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            {{ contest["name"] }}
+                        </h4>
+                        <small> 
+<<<<<<< HEAD
+			{% if curtime<contest["starttime"] %}
+				{{ contest["starttime"]}} 
+			{% else %}
+				finished
+			{% end %}
+			</small>
+=======
+                        {% if curtime<contest["starttime"] %}
+                        {{ contest["starttime"]}} 
+                        {% else %}
+                        finished
+                        {% end %}
+                        </small>
+>>>>>>> f70c447cd8481b93bcb678629fb88436473e6b0c
+                    </a>
+                    {% end %}
+            </div>
+        </div>
+                            
+        <div class="text-center">
+             {% module Paginator(pagen,5,length) %}
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+                        <div id="side">
+                                        <div class="panel panel-default">
+                                        <div class="panel-heading">Create contest</div>
+                                        <div class="panel-body">
+                                        <a href="/create">
+                                            <span class="glyphicon glyphicon-heart"></span> &nbsp;Click me create a contest.
+                                        </a>
+                                        <a href="/creatediy">
+                                            <span class="glyphicon glyphicon-heart"></span> &nbsp;Click me diy a problem.
+                                        </a>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+    </div>
+ </div>
+{% end %}
